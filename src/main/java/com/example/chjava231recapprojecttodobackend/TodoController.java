@@ -26,4 +26,9 @@ public class TodoController {
     Todo findById(@PathVariable String id) {
         return service.findById(id);
     }
+
+    @PutMapping("{id}")
+    Todo save(@RequestBody Todo todo) {
+        return service.save(todo);
+    }
 }

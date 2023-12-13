@@ -27,4 +27,8 @@ public class TodoService {
     public Todo findById(String id) {
         return repo.findById(id).orElseThrow(() -> new ResponseStatusException(HttpStatus.NOT_FOUND));
     }
+
+    public Todo save(Todo todo) {
+        return repo.save(todo);
+    }
 }
