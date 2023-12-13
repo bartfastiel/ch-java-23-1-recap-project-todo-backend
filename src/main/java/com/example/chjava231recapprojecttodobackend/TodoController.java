@@ -31,4 +31,9 @@ public class TodoController {
     Todo save(@RequestBody Todo todo) {
         return service.save(todo);
     }
+
+    @DeleteMapping("{id}")
+    void deleteById(@PathVariable String id) {
+        service.deleteById(id);
+    }
 }
