@@ -1,10 +1,9 @@
 package com.example.chjava231recapprojecttodobackend;
 
 import lombok.RequiredArgsConstructor;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @RequestMapping("/api/todo")
@@ -16,5 +15,10 @@ public class TodoController {
     @PostMapping
     Todo save(@RequestBody NewTodo todo) {
         return service.save(todo);
+    }
+
+    @GetMapping
+    List<Todo> findAll() {
+        return service.findAll();
     }
 }
