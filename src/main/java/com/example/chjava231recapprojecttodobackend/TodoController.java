@@ -36,4 +36,9 @@ public class TodoController {
     void deleteById(@PathVariable String id) {
         service.deleteById(id);
     }
+
+    @GetMapping("/undo")
+    void undo() {
+        service.undo();
+    }
 }
